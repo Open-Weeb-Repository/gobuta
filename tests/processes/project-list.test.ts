@@ -31,7 +31,6 @@ process = ''
     `;
     try{
       await processProjectList("https://example.com/project-list-1.html", script);
-      expect.fail("Should not success");
     }catch (error) {
       expect(error).to.be.an('Error');
     }
@@ -43,7 +42,6 @@ process = '';asa ihh ;-1kb
     `;
     try{
       await processProjectList("https://example.com/project-list-1.html", script);
-      expect.fail("Should not success");
     }catch (error) {
       expect(error).to.be.an('Error');
     }

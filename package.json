@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --rs --respawn src",
     "test": "cross-env NODE_ENV=test mocha -r ts-node/register tests/**/*.test.ts",
     "test:watch": "cross-env NODE_ENV=test mocha -r ts-node/register --extensions ts,tsx --watch --watch-files src tests/**/*.test.ts",
-    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
+    "coverage": "nyc -r lcov -e .ts -x \"**/*.test.ts\" npm run test"
   },
   "keywords": [],
   "author": "",
