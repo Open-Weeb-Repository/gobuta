@@ -1,3 +1,5 @@
-for (let i = 0; i < 5; i++) {
-  console.log('Hello world');
-}
+import logger from "./libs/logger";
+import luaEngineFactory from "./libs/lua-engine";
+
+logger.info("Application startup")
+luaEngineFactory.createEngine().catch(err=>logger.error(err.message));
