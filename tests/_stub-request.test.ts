@@ -4,7 +4,7 @@ import {AxiosResponse} from "axios";
 import fsp from "fs/promises";
 import path from "path";
 
-before(async function (){
+export const stubRequest = async ()=>{
   const dummyBaseUrl = "https://example.com/";
   const dummyPagesPath = path.join(__dirname, '_assets','pages');
   const dummyPages = await fsp.readdir(dummyPagesPath);
@@ -16,7 +16,11 @@ before(async function (){
             .resolves({
               data: pageContent
             } as AxiosResponse);
-  }))
+  }));
+}
+
+before(async function (){
+  await stubRequest();
 });
 after(function (){
   sinon.restore();
